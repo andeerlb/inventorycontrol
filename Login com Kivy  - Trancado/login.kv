@@ -1,0 +1,42 @@
+#:import Cor kivy.utils.get_color_from_hex
+
+#FloatLayout:
+#    canvas.before:
+#        Color:
+#            rgba: Cor('#D3D4D5')
+#        Rectangle:
+#            pos: self.pos
+#            size: self.size
+GridLayout:
+    cols: 1
+    spacing: 5
+    size_hint: .4, .37
+    pos_hint: {"center_x": .5, "center_y": .3}
+
+    Label:
+        text: 'Usuario:'
+        halign: 'left'
+        valign: 'middle'
+        size_hint_x: .3
+        text_size: self.size
+    TextInput:
+        id: usuario
+        multiline: False
+
+    Label
+        text: 'Senha:'
+        halign: 'left'
+        text_size: self.size
+        valign: 'middle'
+        size_hint_x: .3
+    TextInput:
+        id: senha
+        multiline: False
+        password: True
+
+    Button:
+        size_hint: 1., 1.
+        text: "Login"
+        on_release: app.login()
+        background_normal: ""
+        background_color: Cor("#4682B4")
